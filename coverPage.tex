@@ -1,0 +1,52 @@
+%%%% debut macro %%%%
+\newenvironment{changemargin}[2]{\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{0pt}%
+\setlength{\rightmargin}{0pt}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{0pt plus 1pt}%
+\addtolength{\leftmargin}{#1}%
+\addtolength{\rightmargin}{#2}%
+}\item }{\end{list}}
+%%%% fin macro %%%%
+\begin{changemargin}{-2cm}{-2cm}
+\newcommand{\HRule}{\rule[2mm]{10mm}{0.5mm}}
+\thispagestyle{empty}
+\includegraphics[height=50px]{images/Logo-UCA.png}
+\hspace*{\fill}
+\includegraphics[height=50px]{images/irstea_logo.png}
+\begin{center}
+    \textsc{\large Université Clermont Auvergne}\\[0.5mm]
+    \HRule \textsc{ Institut d'Informatique} \HRule 
+    \\[1cm]
+    STAGE DE MASTER 1
+    \\[1cm]
+     effectué à : 
+     \\
+   l'institut national de recherche en sciences et technologies pour l'environnement et l'agriculture
+   \textbf{IRSTEA}
+   \\[0.5cm]
+    sous la direction de : 
+    \\[1cm]
+    \textbf{M. François PINET}
+    \\
+    maître de stage
+    \\[0.5cm]
+    et
+    \\[0.5cm]
+  \textbf{M. Hervé KERIVIN}
+    \\
+    tuteur académique
+    \\[2cm]
+    
+    {\huge \Title}
+    \\[1cm]
+
+    \textbf{\@author}
+    \\[0.5cm]
+
+    Année Académique : \@date
+\end{center}
+\end{changemargin}
+

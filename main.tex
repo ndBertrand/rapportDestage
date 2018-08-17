@@ -1,0 +1,70 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[left=5cm, right=3cm]{geometry}
+\usepackage{pdfpages}
+\usepackage[english,frenchb]{babel}
+\usepackage[T1]{fontenc}
+
+% librairie lorem ipsum
+\usepackage{lipsum}
+
+%librairie caractères spécion
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%%librairie image flottant
+\usepackage{wrapfig}
+
+% librari landscape
+\usepackage{lscape}
+
+\renewcommand{\partname}{}
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{}
+\renewcommand{\figurename}{Figure}
+
+\usepackage{glossaries}
+\makeglossaries
+
+
+
+\makeatletter
+\title{Rapport de stage} \let\Title\@title
+\author{Bertrand NDAYISENGA} \let\Author\@author
+\date{2017-2018} \let\Date\@date
+\begin{document}
+
+    \input{glossaire.tex}
+
+    %page de garde
+    \input{coverPage.tex}
+    
+    % abstract
+    \input{abstract.tex}
+    
+    % remerciements
+    \input{remerciements.tex}
+    
+    
+    %sommaire
+    \renewcommand{\contentsname}{Sommaire}
+    \tableofcontents
+    
+    \renewcommand{\listfigurename}{Table des figures}
+    \listoffigures
+    
+    \renewcommand{\glossaryname}{Glossaire}
+    \printglossary
+    
+    %contents
+    \input{introduction.tex}
+    \input{presentationStage/presentationStage.tex}
+    \input{operose/operose.tex}
+    \input{mutlitpass/mulitpass.tex}
+    \input{bilan/bilan.tex}
+
+
+\end{document}          
