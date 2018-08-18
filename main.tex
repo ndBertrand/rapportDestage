@@ -25,22 +25,23 @@
 \renewcommand{\thechapter}{}
 \renewcommand{\thesection}{}
 \renewcommand{\figurename}{Figure}
+% numérotation des figures
+\renewcommand{\thefigure}{\Roman{part}.\arabic{section}.\arabic{figure}}
 
 \usepackage{glossaries}
 \makeglossaries
 
-
-
 \makeatletter
-\title{Rapport de stage} \let\Title\@title
+\title{Solution d'acquisition et de stockage de données et étude sur l'anonymisation de données} \let\Title\@title
 \author{Bertrand NDAYISENGA} \let\Author\@author
 \date{2017-2018} \let\Date\@date
-\begin{document}
 
-    \input{glossaire.tex}
+\begin{document}
 
     %page de garde
     \input{coverPage.tex}
+    
+     \input{glossaire.tex}
     
     % abstract
     \input{abstract.tex}
