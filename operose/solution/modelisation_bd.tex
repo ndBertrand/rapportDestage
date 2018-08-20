@@ -1,5 +1,5 @@
 \section{modélisation de la base de données}
-la modélisation de la base de données s'est fait progressivement tout au long du stage. Chaque fois on essayait de l'améliorer en y apportant les ajouts nécessaire pour la faire correspondre à l'idée de départ, d'une base de données générique. Au moment de la rédaction du rapport, sa modélisation n'est pas encore fini ou plutôt n'est pas encore validé. Toute fois, nous avons décidé d'y insérer des données et la testée jusqu'à ce qu'à ce que nous rencontrions un problème.
+la modélisation de la base de données s'est faite progressivement tout au long du stage. Chaque fois je l'améliorait en y apportant les ajouts nécessaire pour la faire correspondre à l'idée de départ, d'une base de données générique. Au moment de la rédaction du rapport, sa modélisation n'est pas encore fini ou plutôt n'est pas encore validé. Toute fois, nous avons décidé d'y insérer des données et la testée jusqu'à ce qu'à ce que nous rencontrions un problème.
 \subsection{Principe d'une base de données générique}
 D'une manière générale, lorsqu'on modélise une base de données, on regroupe entre eux les objets ayant les mêmes propriétés dans entités. Par exemple pour une base de données qui stocke des objets de type moutons et voitures, on aura des entités(tables) moutons et voiture comme dans l'exemple qui suit : 
 
@@ -11,7 +11,7 @@ D'une manière générale, lorsqu'on modélise une base de données, on regroupe
 \label{exemples de tables d'une base de données}
 \end{figure}
 
-la modélisation devient d'autant plus difficile si dès le départ on ne connaît pas l'ensemble des objets que l'on doit stocker. En d'autres mots, on souhaite faire une base de données pour contenir plusieurs type d'objets dont les propriétés ne sont pas connu à l'avance. Dans l'exemple ci-dessus, ça correspondrait à stoker, en plus des moutons et des voitures, des immeubles, des personnes et tout autre type d'objet. Pour y remédier, on fait intervenir les bases de données générique. Cela consiste modifier la structure de notre entité et la faire correspondre à une système proche du schéma (clé:valeur). Ce cas de figure fait passer les propriétés des entités dans les colonnes.
+la modélisation devient d'autant plus difficile si dès le départ on ne connaît pas l'ensemble des objets que l'on doit stocker. En d'autres mots, on souhaite faire une base de données pour contenir plusieurs type d'objets dont les propriétés ne sont pas connu à l'avance. Dans l'exemple ci-dessus, ça correspondrait à stoker, en plus des moutons et des voitures, des immeubles, des personnes et tout autre type d'objet. Pour y remédier, on fait intervenir les bases de données générique. Cela consiste modifier la structure de notre entité et la faire correspondre à un système proche du schéma (clé:valeur). Ce cas de figure fait passer les propriétés des entités dans les colonnes.
 l'exemple ci-dessous illustre bien ces propos
 
 \begin{figure}[h!]
@@ -37,7 +37,7 @@ La dimension temps sera matérialisée par le fait que chaque relevé sera ident
     \end{center}
 \end{figure}
 
-Ne connaissant pas à l'avance quel types de capteurs on aura ni les caractéristiques de ses derniers, il nous est impossible de modéliser la table capteurs. Mais en appliquant le principe de générécité cité ci-haut, on peut alors extraire les caractéristique liés au capteurs pour les mettre dans un autre table. On appliquera le même principe pour les noeuds.
+Ne connaissant pas à l'avance quel types de capteurs on aura ni les caractéristiques de ces derniers, il nous est impossible de modéliser la table capteurs. Mais en appliquant le principe de générécité cité précédement, on peut alors extraire les caractéristique liés aux capteurs pour les mettre dans un autre table. On appliquera le même principe pour les noeuds.
 \begin{figure}[!h]
    \begin{center}
         \includegraphics[width=1\textwidth]{images/uml_image2.jpg}

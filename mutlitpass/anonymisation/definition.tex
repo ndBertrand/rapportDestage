@@ -4,17 +4,17 @@ l’avis du G29\footnote{Groupe de travail institué par l’article 29 de la di
 sur la protection des données et de la vie privée. Ses missions sont définies à l’article 30 de la directive 95/46/CE et à l’article
 15 de la directive 2002/58/CE.}[4] rappelle que \textbf{\emph{l’anonymisation}}, au sens de la directive 95/46/CE (abrogé par le règlement numéro 2016/679 dit \gls{RGPD})
 \begin{em}
-    "est le résultat du traitement des données personnelles afin d’empêcher de façon réversible, toute identification"
+    "est le résultat du traitement des données personnelles afin d’empêcher de façon irréversible, toute identification"
 \end{em}  
 
-L’anonymisation est donc ce processus qui supprime tout lien directe ou indirecte entre une personne et la donnée qui la concerne. Mais le défi majeur de l’anonymisation réside dans le fait de pouvoir garder l’utilité de l’information que contient une donnée.  En effet, plus on cherche à anonymiser plus grand est la perte de l’information.  
+L’anonymisation est donc ce processus qui supprime tout lien directe ou indirecte entre une personne et la donnée qui la concerne. Mais le défi majeur de l’anonymisation réside dans le fait de pouvoir garder l’utilité de l’information que contient une donnée.  En effet, plus on cherche à anonymiser plus grande est la perte de l’information.  
 Ainsi donc, l’anonymisation et la re-identification ont fait et font toujours l’objet de plusieurs études. Certains cherchent des techniques de plus en plus performantes pour rendre anonyme, d’autres, des techniques pour casser les techniques précédentes. Nous citerons l'exemple de Lantanya Sweeney, qui, au début des années 2000, prouva qu’une méthode (appelé aujourd’hui pseudonymisation) n’était pas efficace pour anonymiser et   proposa une autre méthode nommée k-Anonymat, ([5], que nous verrons plus tard. 
 
 \subsection{Différence entre l’anonymisation et la pseudonymisation}
 
 Le caractère irréversible doit être établie pour dire qu’il y a anonymisation. Dans le cas contraire il s’agit d’une pseudonymisation. Nombreux sont ceux qui confondent l’anonymisation et la pseudonymisation. Ce dernier, se dit d’un processus qui remplace un attribut (généralement un attribut unique) par un autre (appelé pseudonyme) dans un enregistrement [6, p. 29]. 
 
-L’avantage de la pseudonymisation est que tant qu’on ne traite pas les champs identifiants, les résultats sur les autres champs sont identiques que des résultats effectués sur une base non anonymisé. Toutefois, la pseudonymisation reste fragile aux attaques de type record linkage, mis en évidence par Latanya Sweeney. Elle put identifier une partie des individus issus d’une base de données médicale (pseudonymisée) croisée avec une liste électorale publique. 
+L’avantage de la pseudonymisation est que tant qu’on ne traite pas les champs identifiants, les résultats sur les autres champs sont identiques que des résultats effectués sur une base non anonymisée. Toutefois, la pseudonymisation reste fragile aux attaques de type record linkage, mis en évidence par Latanya Sweeney. Elle put identifier une partie des individus issus d’une base de données médicale (pseudonymisée) croisée avec une liste électorale publique. 
 
 \subsection{Pourquoi faut-il anonymiser?} 
 
@@ -49,9 +49,9 @@ Selon l’état actuelle des technologies, trois risques essentiels sont à teni
 
 \begin{itemize}
  
-    \item \textbf{L’individualisation}: risque de pouvoir isoler une partie ou l’ensemble des enregistrements d’un individu dans un jeu de données. C’est-à-dire que dans un jeu de donnée si on arrive à identifier toutes ou une partie des enregistrements (ligne) correspondant à un individu, alors, le jeu de données peut être individualisé. 
+    \item \textbf{L’individualisation}: risque de pouvoir isoler une partie ou l’ensemble des enregistrements d’un individu dans un jeu de données. C’est-à-dire que dans un jeu de données si on arrive à identifier toutes ou une partie des enregistrements (ligne) correspondant à un individu, alors, le jeu de données peut être individualisé. 
 
-    \item \textbf{La corrélation:} risque de pouvoir relier deux enregistrements correspondant à un même individu. Les enregistrements peuvent appartenir à un seul jeu de données ou à des jeux de données distincts. C’est-à-dire que dans un jeu de données si on arrive à prouver qu’au moins deux enregistrements (lignes) correspondent à un seul et même individu ou groupe d’individu, alors il est possible de corréler. Tout fois, il est possible d’avoir une technique qui ne résiste pas à la corrélation mais qui résiste à la l’individualisation.  
+    \item \textbf{La corrélation:} risque de pouvoir relier deux enregistrements correspondant à un même individu. Les enregistrements peuvent appartenir à un seul jeu de données ou à des jeux de données distincts. C’est-à-dire que dans un jeu de données si on arrive à prouver qu’au moins deux enregistrements (lignes) correspondent à un seul et même individu ou groupe d’individu, alors il est possible de corréler. Toutefois, il est possible d’avoir une technique qui ne résiste pas à la corrélation mais qui résiste à la l’individualisation.  
 
     \item \textbf{L’inférence:} risque de pouvoir déduire, avec une probabilité élevée, la valeur d’un attribut à partir d’un ou d’un ensemble d’autres attributs. Pour comprendre ce risque on peut prendre l’exemple suivant: il est facile de déduire le salaire (même s’il est anonyme) d’un individu rien qu’en ayant connaissance des attributs poste et ancienneté [10]. 
 \end{itemize}
