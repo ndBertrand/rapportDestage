@@ -1,6 +1,6 @@
-\documentclass[a4paper,10pt]{report}
+\documentclass[a4paper,10pt,french]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[left=5cm, right=3cm]{geometry}
+\usepackage[left=4cm, right=4cm]{geometry}
 \usepackage{pdfpages}
 \usepackage[english,frenchb]{babel}
 \usepackage[T1]{fontenc}
@@ -58,7 +58,7 @@
     \listoffigures
     
     \renewcommand{\glossaryname}{Glossaire}
-    \printglossary
+    \printglossary[type=main,style=long,nonumberlist]
     
     %contents
     \input{introduction.tex}
@@ -66,6 +66,9 @@
     \input{operose/operose.tex}
     \input{mutlitpass/mulitpass.tex}
     \input{bilan/bilan.tex}
-
-
+    
+    %annexes
+    \appendix
+    \input{Annexes/annexes.tex}
+    
 \end{document}          

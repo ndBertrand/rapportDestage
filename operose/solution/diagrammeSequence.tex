@@ -1,10 +1,11 @@
 \section{Les diagrammes de séquences}
  
-Les diagrammes ci-dessous décrivent les séquences d’extraction des données à partir des stations météo sencrop et davis vantage pro 2 ansi que leurs chargment dans des bases de données intermédiaire. 
-\subsection{Séquence pour la station sencrop.}
-Sencrop met à disposition de ses clients, détenteurs d’une de leurs stations, une plateforme de visualisation des relevés. Cette plateforme présente des données en générale de façons agrégés mais permettant d’avoir une bonne lecture de la situation météorologique selon une plage de temps que l’on souhaite. Elle met également à disposition une API, qui par des requêtes bien précise, permet d’avoir les relevés brutes.  
+Les diagrammes ci-dessous décrivent les séquences d’extraction des données à partir des stations météo sencrop et davis vantage pro 2 ansi que leurs chargment dans des bases de données intermédiaire.
 
-Il faut donc a avoir un compte sencrop et se connecter à l’API. une fois la connexion établit, un jeton ayant une date d’expiration est généré, et l’on peut faire ainsi une requête. Ce processus peut donc être automatiser via un script python et être exécuté régulièrement via un gestionnaire de tâches. La grande difficulté réside dans le fait de bien comprendre en amont, la structure des requête c’est-à-dire le nombre et le type de paramètres qu’il faut envoyer mais aussi la structure des données que l’on reçoit. C’est pour cela que sencrop a prévu une documentation pour pouvoir utiliser l’API. 
+\subsection{Séquence pour la station sencrop.}
+Sencrop met à disposition de ses clients, détenteurs d’une de leurs stations, une plateforme de visualisation des relevés. Cette plateforme présente des données en générale de façons agrégés mais permettant d’avoir une bonne lecture de la situation météorologique selon une plage de temps que l’on souhaite. Elle met également à disposition une API, qui par des requêtes bien précises, permet d’avoir les relevés brutes.  
+
+Il faut donc a avoir un compte sencrop et se connecter à l’ \gls{API}. une fois la connexion établit, un jeton ayant une date d’expiration est généré, et l’on peut faire ainsi une requête. Ce processus peut donc être automatiser via un script python et être exécuté régulièrement via un gestionnaire de tâches. La grande difficulté réside dans le fait de bien comprendre en amont, la structure des requête c’est-à-dire le nombre et le type de paramètres qu’il faut envoyer mais aussi la structure des données que l’on reçoit. C’est pour cela que sencrop a prévu une documentation pour pouvoir utiliser l’API. 
 \newline
 \url{https://developer.sencrop.com/guide/}  
 \begin{figure}[!h]
@@ -16,13 +17,13 @@ Il faut donc a avoir un compte sencrop et se connecter à l’API. une fois la c
 \end{figure}
 
 \subsection{Séquence pour la station davis vantage pro 2} 
-La station météo davis vantage pro 2 génère de fichiers avec format .wlk. C’est fichiers sont modifiés quotidiennement et ne contient que les données du mois courant. Ainsi par exemple pour le mois d’août 2018 un fichier de nom 2018\_08.wlk sera généré. Celui-ci sera modifier quotidiennement pour contenir tous le données à partir du 01 jusqu’au jour précédent. Un logiciel, fourni par l’entreprise propriétaire pour décoder, les fichier .wlk existe mais il n’est pas gratuit, plus encore, il n’est pas pas multiplateforme et l’utilisation de celui-ci en ligne de commande pour automatiser les tâches est quasi-impossible car il nécessité plusieurs paramétrés. Nous nous sommes donc tournés vers des outils libres qui existerait sur internet pour décoder le fichier wlk.  Ainsi nous sommes tombés sur un utilitaire qui fait beaucoup plus que décoder. En effet, cet utilitaire permettait de générer des fichiers au format sql pour alimenter une base de données. Ceci nous a beaucoup aidé car il ne restait plus que la tâche d'automatisation des  de décodage des fichiers .wlk et celui de l’insertion. Mais il s’est avéré que à certains endroits, l’utilitaire produit des erreurs de sorti. La grande difficulté fut de pouvoir personnalisé les sortis attendus pour qu’elles correspondent aux résultats escomptés. 
+La station météo davis vantage pro 2 génère de fichiers avec format .wlk. Ces fichiers sont modifiés quotidiennement et ne contienent que les données du mois courant. Ainsi par exemple pour le mois d’août 2018 un fichier de nom 2018\_08.wlk sera généré. Celui-ci sera modifié quotidiennement pour contenir tous le données à partir du 01 jusqu’au jour précédent. Un logiciel, fourni par l’entreprise propriétaire, pour décoder les fichiers .wlk existe mais il n’est pas gratuit.Plus encore, il n’est pas pas multiplateforme et l’utilisation de celui-ci en ligne de commande pour automatiser les tâches est quasi-impossible car il nécessité plusieurs paramétrés. Nous nous sommes donc tournés vers des outils libres qui existeraient sur internet pour décoder les fichiers wlk. Nous sommes tombés sur un utilitaire qui fait beaucoup plus que décoder. Cet utilitaire permettait de générer des fichiers au format sql pour alimenter une base de données. Ceci nous a beaucoup aidé car il ne restait plus que la tâche d'automatisation des  de décodage des fichiers .wlk et celui de l’insertion. Mais il s’est avéré que à certains endroits, l’utilitaire produsait des erreurs de sorti. La grande difficulté fut de pouvoir personnalisé les sortis attendus pour qu’elles correspondent aux résultats escomptés. 
 
 \begin{figure}
     
     \centering
      \includegraphics[width=.7\textwidth]{images/davis_senquence_diagrame.jpg}
-     \caption{diagramme de séquence pour l'extraction et le chargement des données de la station Davis vantage pro2}
+     \caption{ Séquence pour l'extraction et le chargement des données de la station Davis vantage pro2}
      \label{diagramme de séquence station sencrop}
 \end{figure}
 
@@ -30,7 +31,7 @@ La station météo davis vantage pro 2 génère de fichiers avec format .wlk. C�
 \begin{figure}[!h]
     \centering
      \includegraphics[width=1\textwidth]{images/processusOperose.png}
-     \caption{séquence d'extraction de chargement et d'envoie données pour le projet OPEROSE}
+     \caption{ Séquence d'extraction de chargement et d'envoie données pour le projet OPEROSE}
      \label{diagremme de séquence station Davis}
 \end{figure}
      

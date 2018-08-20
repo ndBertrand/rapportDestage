@@ -1,7 +1,7 @@
 \section{modélisation de la base de données}
 la modélisation de la base de données s'est fait progressivement tout au long du stage. Chaque fois on essayait de l'améliorer en y apportant les ajouts nécessaire pour la faire correspondre à l'idée de départ, d'une base de données générique. Au moment de la rédaction du rapport, sa modélisation n'est pas encore fini ou plutôt n'est pas encore validé. Toute fois, nous avons décidé d'y insérer des données et la testée jusqu'à ce qu'à ce que nous rencontrions un problème.
 \subsection{Principe d'une base de données générique}
-D'une manière générale, lorsqu'on modélise une base de données, on regroupe entre eux les objets ayant les mêmes propriétés dans entités. Ainsi par exemple pour une base de données qui stocke des objets de type moutons et voitures, on aura des entités(tables) moutons et voiture comme dans l'exemple qui suit : 
+D'une manière générale, lorsqu'on modélise une base de données, on regroupe entre eux les objets ayant les mêmes propriétés dans entités. Par exemple pour une base de données qui stocke des objets de type moutons et voitures, on aura des entités(tables) moutons et voiture comme dans l'exemple qui suit : 
 
 \begin{figure}[h!]
 \begin{center}
@@ -26,6 +26,7 @@ l'exemple ci-dessous illustre bien ces propos
 \subsubsection{Modélisation}
 La valeur d'une donnée en générale et d'une donnée capteur émanant d'une mesure en particulier est d'autant plus important que celle-ci fait apparaître la dimension espace et la dimension temps.
 A quoi nous servirait par exemple d'avoir 30$^\circ$ celsius, si on ne se pas à quel endroit fait référence à cette mesure ni à quelle moment elle a été relevé. Ce principe nous a guidé dans la modélisation de la base de données.
+
 Pour faire intervenir la dimension espace, on s'est dit qu'un capteur est localisé dans un noeud et un noeud est un point d'un réseau de capteur. Ainsi chaque relevé peut être localisé avec un certain degré de précision.
 La dimension temps sera matérialisée par le fait que chaque relevé sera identifiée par un attribut date. 
 \begin{figure}[!h]
@@ -36,7 +37,7 @@ La dimension temps sera matérialisée par le fait que chaque relevé sera ident
     \end{center}
 \end{figure}
 
-Ne Connaissant pas à l'avance quel types de capteurs on aura ni les caractéristiques de ses derniers, il nous est impossible de modéliser la table capteurs. Mais en appliquant le principe de générécité cité ci-haut, on peut alors extraire les caractéristique liés au capteurs pour les mettre dans un autre table. On appliquera le même principe pour les noeud.
+Ne connaissant pas à l'avance quel types de capteurs on aura ni les caractéristiques de ses derniers, il nous est impossible de modéliser la table capteurs. Mais en appliquant le principe de générécité cité ci-haut, on peut alors extraire les caractéristique liés au capteurs pour les mettre dans un autre table. On appliquera le même principe pour les noeuds.
 \begin{figure}[!h]
    \begin{center}
         \includegraphics[width=1\textwidth]{images/uml_image2.jpg}
@@ -44,7 +45,7 @@ Ne Connaissant pas à l'avance quel types de capteurs on aura ni les caractéris
     \label{fig:modélisation UML phase 2}
    \end{center}
 \end{figure}
-
+En continuant à raisonner de façon générique, on arrive à modéliser notre base de données comme sur la figure \ref{ Base de données OPEROSE}. Si l'on regarde plus attentivement, on se rend compte qu'une table, de la base de données contiendra beaucoup plus de données que les autres. Dans notre cas il s'agit de la table \textbf{releve} qui stockera toutes les mesures de tous les capteurs. Le fait de transposer les données d'une table normale à une table générique augmente considérable le nombre d'enregistrements. Cela a des conséquence sur l'espace à allouer à la base de données mais aussi sur la complexité en temps d'exécution des requêtes. Une des solutions pour pallier à ce problème peut être d'utiliser les vues matérialisés pour certaines requêtes.
 
 
 % image de la base de données
@@ -52,11 +53,14 @@ Ne Connaissant pas à l'avance quel types de capteurs on aura ni les caractéris
 \begin{figure}
    \begin{center}
        \includegraphics[width=1.8\textwidth]{images/bd_image3.jpg}
-    \caption{base de données OPEROSE}
-     \label{base de données OPEROSE}
+    \caption{ Base de données OPEROSE}
+     \label{ Base de données OPEROSE}
    \end{center}
 \end{figure}
 \end{landscape}
+
+
+
 
 
 
