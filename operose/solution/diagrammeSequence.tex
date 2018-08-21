@@ -34,5 +34,29 @@ La station météo davis vantage pro 2 génère des fichiers au format .wlk. Ces
      \caption{ Séquence d'extraction de chargement et d'envoie données pour le projet OPEROSE}
      \label{diagremme de séquence station Davis}
 \end{figure}
+
+\section{Le diagramme de paquetage}
+Le programme d'extraction et de chargement des données météo des deux stations a été implémenté de façon modulaire dans lequel chaque module est indépendants. Nous avons donc un paquet \textbf{SencropDataExport} dans lequel se trouvent :
+\begin{itemize}
+    \item une classe pour la connection et les requêtes vers l'API sencrop
+    \item une classe pour la connection et les requêtes vers la base de données
+    \item des classes pour l'extraction et le chargement des données(par jour, par heure et par 15minutes d'intervalles) dans une base de données intermédiaire.
+    \item une classe qui migre les données de la base intermédiaire à la base de données générique
+    \item une classe qui génère les fichiers qui devront être envoyés au LNE.
+\end{itemize}
+et un paquet \textbf{DavisDataExport} dans lequel se trouvent : 
+\begin{itemize}
+    \item une classe de connection à la base de données
+    \item une classe qui décode les fichiers .wlk  et exporte les données dans une base de données intermédiaire
+    \item une classe qui migre les onnées dans de la base intermédiare à la base de données générique
+    \item une classe qui génère les fichiers qui devront être envoyés au LNE.
+\end{itemize}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[height=.8\textheight]{images/package_diagramme.jpg}
+    \caption{Diagramme des paquetages}
+    \label{fig:Diagramme des paquetages}
+\end{figure}
      
 
