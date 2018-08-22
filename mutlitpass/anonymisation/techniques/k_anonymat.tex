@@ -1,6 +1,6 @@
 \subsection{K-anonymat} 
 
-La k-anonymisation est une technique d’anonymisation qui empêche qu’une personne ne soit isolée dans un jeu de données. Elle permet ainsi de regrouper un individu avec au moins k autres individus, de sorte qu’il y ait moins de chance de le retrouver. En d’autres mots, on généralise certains attributs de telle manière à ce que ces derniers soient identiques pour un groupe de K individus [4;11]. 
+La k-anonymisation est une technique d’anonymisation qui empêche qu’une personne ne soit isolée dans un jeu de données. Elle permet ainsi de regrouper un individu avec au moins k autres individus, de sorte qu’il y ait moins de chance de le retrouver. En d’autres mots, on généralise certains attributs de telle manière à ce que ces derniers soient identiques pour un groupe de K individus\cite{noauthor_institut_1992}. 
 
 \paragraph{Etapes de la k-anonymisation:} 
 \begin{itemize}
@@ -25,11 +25,11 @@ La k-anonymisation est une technique d’anonymisation qui empêche qu’une per
 
     \item \textbf{Corrélation:} il est possible de relier les enregistrements par groupe de k-individus. Au sein d’un même groupe, la probabilité que deux enregistrements correspondent à un individu est de 1/k. 
 
-    \item \textbf{Inférence:} si tous les k individus d’une classe d’équivalence ont la même valeur pour un attribut donné et que cette information est sensible, il suffit de connaître à quelle classe d’équivalence appartient un individu pour déduire sa données sensible. 
+    \item \textbf{Inférence:} si tous les k individus d’une classe d’équivalence ont la même valeur pour un attribut donné et que cette information est sensible, il suffit de connaître à quelle classe d’équivalence appartient un individu pour déduire sa donnée sensible. 
 \end{itemize}
  
-Alors que k-anonymat protège contre la divulgation d'identité, il n'offre pas une protection suffisante contre la divulgation d'attributs. Cela a été reconnu par plusieurs auteurs[13], [14]. Deux types d'attaques ont été identifiées pour le k-anonymat.
+Alors que k-anonymat protège contre la divulgation d'identité, il n'offre pas une protection suffisante contre la divulgation d'attributs. Cela a été reconnu par plusieurs auteurs\cite{truta_privacy_2006,machanavajjhala_l-diversity:_2006}. Deux types d'attaques ont été identifiées pour le k-anonymat.
 \begin{itemize}
     \item attaque par homogénéité \textbf{Homogeneity Attack} : Tous les individus d'une classe d'équivalence possèdent la valeur pour un attribut sensible
-    \item  attaque avec une connaissance de base \textbf{Background Knowledge Attack} [14] : si l'attaquant connaît déjà certaines informations sur un individu, il sera facile pour lui de l'isoler dans une classe de k-individus. 
+    \item  attaque avec une connaissance de base \textbf{Background Knowledge Attack} \cite{machanavajjhala_l-diversity:_2006} : si l'attaquant connaît déjà certaines informations sur un individu, il sera facile pour lui de l'isoler dans une classe de k-individus. 
 \end{itemize} 

@@ -5,8 +5,6 @@
 \usepackage[english,frenchb]{babel}
 \usepackage[T1]{fontenc}
 
-% librairie lorem ipsum
-\usepackage{lipsum}
 
 %librairie caractères spécion
 \usepackage{hyperref}
@@ -18,15 +16,18 @@
 %%librairie image flottant
 \usepackage{wrapfig}
 
+\usepackage{minted}
+
 % librari landscape
 \usepackage{lscape}
 
 \renewcommand{\partname}{}
 \renewcommand{\thechapter}{}
 \renewcommand{\thesection}{}
+\renewcommand{\appendix}{}
 \renewcommand{\figurename}{Figure}
 % numérotation des figures
-\renewcommand{\thefigure}{\Roman{part}.\arabic{section}.\arabic{figure}}
+\renewcommand{\thefigure}{\Roman{part}.\arabic{figure}}
 
 \usepackage{glossaries}
 \makeglossaries
@@ -67,7 +68,8 @@
     \input{mutlitpass/mulitpass.tex}
     \input{bilan/bilan.tex}
     
-    
+  \bibliographystyle{abbrv}
+\bibliography{Annexes/biblio}
 
     %annexes
     \appendix

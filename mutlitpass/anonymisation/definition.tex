@@ -2,48 +2,48 @@
 
 l’avis du G29\footnote{Groupe de travail institué par l’article 29 de la directive 95/46/CE. Il s’agit d’un organe consultatif européen indépendant
 sur la protection des données et de la vie privée. Ses missions sont définies à l’article 30 de la directive 95/46/CE et à l’article
-15 de la directive 2002/58/CE.} rappelle que \textbf{\emph{l’anonymisation}}, au sens de la directive 95/46/CE (abrogé par le règlement numéro 2016/679 dit \gls{RGPD})
+15 de la directive 2002/58/CE.}\cite{noauthor_avis_nodate} rappelle que \textbf{\emph{l’anonymisation}}, au sens de la directive 95/46/CE (abrogé par le règlement numéro 2016/679 dit \gls{RGPD})
 \begin{em}
     "est le résultat du traitement des données personnelles afin d’empêcher de façon irréversible, toute identification"
 \end{em}  
 
 L’anonymisation est donc ce processus qui supprime tout lien directe ou indirecte entre une personne et la donnée qui la concerne. Mais le défi majeur de l’anonymisation réside dans le fait de pouvoir garder l’utilité de l’information que contient une donnée.  En effet, plus on cherche à anonymiser plus grande est la perte de l’information.  
-Ainsi donc, l’anonymisation et la re-identification ont fait et font toujours l’objet de plusieurs études. Certains cherchent des techniques de plus en plus performantes pour rendre anonyme, d’autres, des techniques pour casser les techniques précédentes. Nous citerons l'exemple de Lantanya Sweeney, qui, au début des années 2000, prouva qu’une méthode (appelé aujourd’hui pseudonymisation) n’était pas efficace pour anonymiser et   proposa une autre méthode nommée k-Anonymat, (que nous verrons plus tard. 
+Ainsi donc, l’anonymisation et la re-identification ont fait et font toujours l’objet de plusieurs études. Certains cherchent des techniques de plus en plus performantes pour rendre anonyme, d’autres, des techniques pour casser les techniques précédentes. Nous citerons l'exemple de Lantanya Sweeney, qui, au début des années 2000, prouva qu’une méthode (appelé aujourd’hui pseudonymisation) n’était pas efficace pour anonymiser et   proposa une autre méthode nommée k-Anonymat\cite{sweeney_k-anonymity:_2002}.
 
 \subsection{Différence entre l’anonymisation et la pseudonymisation}
 
-Le caractère irréversible doit être établie pour dire qu’il y a anonymisation. Dans le cas contraire il s’agit d’une pseudonymisation. Nombreux sont ceux qui confondent l’anonymisation et la pseudonymisation. Ce dernier, se dit d’un processus qui remplace un attribut (généralement un attribut unique) par un autre (appelé pseudonyme) dans un enregistrement. 
+Le caractère irréversible doit être établi pour dire qu’il y a anonymisation. Dans le cas contraire il s’agit d’une pseudonymisation. Nombreux sont ceux qui confondent l’anonymisation et la pseudonymisation. Ce dernier, se dit d’un processus qui remplace un attribut (généralement un attribut unique) par un autre (appelé pseudonyme) dans un enregistrement\cite{noauthor_avis_nodate}. 
 
 L’avantage de la pseudonymisation est que tant qu’on ne traite pas les champs identifiants, les résultats sur les autres champs sont identiques que des résultats effectués sur une base non anonymisée. Toutefois, la pseudonymisation reste fragile aux attaques de type record linkage, mis en évidence par Latanya Sweeney. Elle put identifier une partie des individus issus d’une base de données médicale (pseudonymisée) croisée avec une liste électorale publique. 
 
 \subsection{Pourquoi faut-il anonymiser?} 
 
-L’objectif principale de l’anonymisation est de réduire à un niveau acceptable le risque de réidentification. Il faut anonymiser car, des règles de confidentialité et de sécurité sont imposés par la loi surtout quand il s’agit de données personnelles. Ces lois sont là pour empêcher des tierces personnes à accéder à des données personnelles. 
+L’objectif principale de l’anonymisation est de réduire à un niveau acceptable le risque de réidentification. Il faut anonymiser car, des règles de confidentialité et de sécurité sont imposés par la loi surtout quand il s’agit de données personnelles. Ces lois sont là pour empêcher des tierces personnes à accéder à des données personnelles\cite{}. 
 
 
 \subsection{Quand faut-il anonymiser?} 
 
-S’il est évident qu’il est nécessaire d’anonymiser dès lors que des données (à caractères personnels) quittent un environnement sécurisé pour être rendus publique, il convient aussi d’anonymiser les données dès leur processus de réception. Ce deuxième cas, suppose que le risque zéro n’existe pas et, qu’aussi sécurisé soit-elle, une base de données peut toujours tomber aux mains d’une personne malveillante. 
+S’il est évident qu’il est nécessaire d’anonymiser dès lors que des données (à caractères personnels) quittent un environnement sécurisé pour être rendues publiques, il convient aussi d’anonymiser les données dès leur processus de réception. Ce deuxième cas, suppose que le risque zéro n’existe pas et, qu’aussi sécurisée soit-elle, une base de données peut toujours tomber aux mains d’une personne malveillante. 
 
 Ainsi on distingue deux stades pour l’anonymisation: 
+\begin{itemize}
+\item L’anonymisation à bref délai : les données collectées sont tout de suite anonymisées (dans un délai allant de quelques secondes à quelques minutes). Le responsable de traitement à l’obligation d’indiquer son identité et la finalité du traitement pour la courte période pendant laquelle les données ne sont pas anonymisées.  
 
-L’anonymisation à bref délai: les données collectées sont tout de suite anonymisées (dans un délai allant de quelques secondes à quelques minutes). Le responsable de traitement à l’obligation d’indiquer son identité et la finalité du traitement pour la courte période pendant laquelle les données ne sont pas anonymisées.  
-
-L’anonymisation ultérieur: le processus d’anonymisation se fait une fois le délai de conservation des données dépassé. On choisit alors de ne pas supprimer les données et de les conserver à des fins de statiques par exemple. Les données devront être collectées et traitées dans le strict respect de la Loi de 1978.
-
+\item L’anonymisation ultérieur : le processus d’anonymisation se fait une fois le délai de conservation des données dépassé. On choisit alors de ne pas supprimer les données et de les conserver à des fins de statiques par exemple. Les données devront être collectées et traitées dans le strict respect de la Loi de 1978.
+\end{itemize}
 \subsection{Comment anonymiser?} 
 
 Le processus général pour anonymiser un ensemble de données est de supprimer tous les attributs identifiant (ex: nom, le numéro de sécurité sociale, etc.), et ensuite de modifier les attributs quasi-identifiants (âge, adresse, etc.).  
 
 Parmi les techniques pour l’anonymisation des données on distingue deux grandes familles:  
 
-Les techniques de généralisation: techniques qui consistent à généraliser ou diluer les données personnelles de façon à ce qu’elles perdent en précision et qu’elles ne soient plus spécifiques à une personne mais communes à un ensemble de personnes. 
+Les techniques de généralisation : techniques qui consistent à généraliser ou diluer les données personnelles de façon à ce qu’elles perdent en précision et qu’elles ne soient plus spécifiques à une personne mais communes à un ensemble de personnes. 
 
-Les techniques de randomisation:  techniques d’anonymisation qui altèrent la véracité des données dans le but de supprimer le lien fort entre les données et la personne. 
+Les techniques de randomisation :  techniques d’anonymisation qui altèrent la véracité des données dans le but de supprimer le lien fort entre les données et la personne. 
 
 \subsection{Critères d’évaluation des techniques d’anonymisation}
 
-Selon l’état actuelle des technologies, trois risques essentiels sont à tenir compte dans le processus d’anonymisation:  
+Selon l’état actuelle des technologies, trois risques essentiels sont à tenir en compte dans le processus d’anonymisation :  
 
 \begin{itemize}
  
